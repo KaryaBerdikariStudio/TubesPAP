@@ -35,20 +35,21 @@ public class BoatController : MonoBehaviour
     {
         //default direction
         var forceDirection = transform.forward;
-        var steer = 0;
+        float steer = 0;
+        float speedBoat = 0.7f;
 
         //steer direction [-1,0,1]
         if (Input.GetKey(KeyCode.A))
-            steer = 1;
+            steer = 1f;
         if (Input.GetKey(KeyCode.D))
-            steer = -1; 
+            steer = -1f;
 
 
         //Rotational Force
         Rigidbody.AddForceAtPosition(steer * transform.right * SteerPower / 1000f, Motor.position);
 
         //compute vectors
-        var forward = Vector3.Scale(new Vector3(1, 0, 1), transform.forward);
+        var forward = Vector3.Scale(new Vector3(1, 0, speedBoat), transform.forward);
         var targetVel = Vector3.zero;
 
         //forward/backward poewr
@@ -58,7 +59,7 @@ public class BoatController : MonoBehaviour
             PhysicsHelper.ApplyForceToReachVelocity(Rigidbody, forward * -MaxSpeed, Power);
 
         //Motor Animation // Particle system
-        Motor.SetPositionAndRotation(Motor.position, transform.rotation * StartRotation * Quaternion.Euler(0, 30f * steer, 0));
+        Motor.SetPositionAndRotation(Motor.position, transform.rotation * StartRotation * Quaternion.Euler(0, 3f * steer, 0));
         if (ParticleSystem != null)
         {
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))

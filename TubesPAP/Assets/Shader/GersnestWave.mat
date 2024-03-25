@@ -88,7 +88,7 @@ Material:
     - _Wavelength3: 10
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.17493767, g: 0.39860564, b: 0.7924528, a: 1}
+    - _Color: {r: 0.14158057, g: 0.42241025, b: 0.9150943, a: 0.78039217}
     - _Direction: {r: 1, g: 0.58, b: 0, a: 0}
     - _Direction1: {r: 1, g: 1, b: 0, a: 0}
     - _Direction2: {r: 0, g: 0.6, b: 0, a: 0}

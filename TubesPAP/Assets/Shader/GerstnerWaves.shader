@@ -18,11 +18,11 @@ Shader "Custom/Waves" {
 		_Direction3 ("Direction3", Vector) = (1,1.3,0,0)
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 		LOD 200
 
 		CGPROGRAM
-		#pragma surface surf Standard fullforwardshadows vertex:vert addshadow
+		#pragma surface surf Standard alpha vertex:vert addshadow
 		#pragma target 3.0
 
 		sampler2D _MainTex;
