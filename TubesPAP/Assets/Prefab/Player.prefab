@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3563133049241885067}
   - component: {fileID: 4745298397017384130}
   - component: {fileID: 7069143118441607170}
-  - component: {fileID: 8153923661981004266}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 4642693340799529397}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5158610964389493838
 MeshRenderer:
@@ -164,20 +163,6 @@ MonoBehaviour:
   Power: 5
   MaxSpeed: 10
   Drag: 0.1
---- !u!114 &8153923661981004266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21196685762066688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bef0136faafb9041be4093c6c8cbedf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turningSpeed: 0.1
-  maxTurnAngle: 360
 --- !u!1001 &5180425466125751902
 PrefabInstance:
   m_ObjectHideFlags: 0

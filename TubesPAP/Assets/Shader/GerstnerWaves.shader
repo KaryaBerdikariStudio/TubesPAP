@@ -21,10 +21,15 @@ Shader "Custom/Waves" {
 		Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 		LOD 200
 
+
 		CGPROGRAM
-		#pragma surface surf Standard alpha vertex:vert addshadow
+		#pragma surface surf Standard alpha vertex:vert addshadow fullforwardshadows
 		#pragma target 3.0
 
+		#pragma shader_feature _DUAL_GRID
+		
+
+		
 		sampler2D _MainTex;
 
 		struct Input {
@@ -133,5 +138,5 @@ Shader "Custom/Waves" {
 		}
 		ENDCG
 	}
-	FallBack "Diffuse"
+	Fallback "Diffuse"
 }
