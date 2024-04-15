@@ -16,7 +16,6 @@ public class BoatController : MonoBehaviour
     //used Components
     protected Rigidbody Rigidbody;
     protected Quaternion StartRotation;
-    protected ParticleSystem ParticleSystem;
     protected Camera Camera;
 
     //internal Properties
@@ -25,7 +24,6 @@ public class BoatController : MonoBehaviour
 
     public void Awake()
     {
-        ParticleSystem = GetComponentInChildren<ParticleSystem>();
         Rigidbody = GetComponent<Rigidbody>();
         StartRotation = Motor.localRotation;
         Camera = Camera.main;
@@ -58,15 +56,9 @@ public class BoatController : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
             PhysicsHelper.ApplyForceToReachVelocity(Rigidbody, forward * -MaxSpeed, Power);
 
-        //Motor Animation // Particle system
+        //Motor Animation 
         Motor.SetPositionAndRotation(Motor.position, transform.rotation * StartRotation * Quaternion.Euler(0, 3f * steer, 0));
-        if (ParticleSystem != null)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
-                ParticleSystem.Play();
-            else
-                ParticleSystem.Pause();
-        }
+       
 
         //moving forward
         var movingForward = Vector3.Cross(transform.forward, Rigidbody.velocity).y < 0;

@@ -16,7 +16,7 @@ using UnityEngine;
             //force = 1 => need 1 s to reach velocity (if mass is 1) => force can be max 1 / Time.fixedDeltaTime
             force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
 
-            //dot product is a projection from rhs to lhs with a length of result / lhs.magnitude https://www.youtube.com/watch?v=h0NJK4mEIJU
+            //dot product is a projection from rhs to lhs with a length of result / lhs.magnitude
             if (rigidbody.velocity.magnitude == 0)
             {
                 rigidbody.AddForce(velocity * force, mode);

@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class PlaneGeneration : MonoBehaviour
 {
+    
     // Size of plane (meter units)
     public int Size = 20;
     public float Scale = 1.0f;
@@ -19,7 +20,8 @@ public class PlaneGeneration : MonoBehaviour
     private Vector2[] uvs;
     private int verticiesLength = 0;
 
-    void Start()
+
+    public void GeneratePlane()
     {
         // Create Mesh
         mesh = new Mesh();
@@ -34,7 +36,7 @@ public class PlaneGeneration : MonoBehaviour
         UpdateMesh();
     }
 
-    void CreatePlane()
+    public void CreatePlane()
     {
         vertices = new Vector3[verticiesLength];
         uvs = new Vector2[vertices.Length];
@@ -79,7 +81,7 @@ public class PlaneGeneration : MonoBehaviour
         }
     }
 
-    void UpdateMesh()
+    public void UpdateMesh()
     {
         mesh.Clear();
         mesh.vertices = vertices;
@@ -87,5 +89,6 @@ public class PlaneGeneration : MonoBehaviour
         mesh.uv = uvs;
         mesh.RecalculateNormals();
     }
+
 
 }
